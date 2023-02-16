@@ -23,6 +23,7 @@ Doing so will enable you to access the HTML, CSS and JS files as needed
 ## Usage
 
 Please see the deployed application at the following link: 
+https://nabeekha.github.io/Code-Quiz-Web-APIs/
 
 For additional photos, please click on the following links. 
 

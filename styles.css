@@ -37,6 +37,15 @@
     background-color: blueviolet;
 }
 
+/* what is the css selector logic to change all of  */
+p, button{ 
+    font-family: var(--font1);
+    display: flex;
+    display: inline;
+}
+
+
+
 @media screen and (max-width: 768px) {
     header {
         background-color: #c8c8c8;

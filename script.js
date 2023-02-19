@@ -2,6 +2,8 @@ var startButtonEl = document.querySelector("#start-quiz-button");
 var count = 0;
 var currentQuestionIndex = 0;
 //var time = questions.length * 15;
+var timeRemaining = 100;
+var timeEl = document.getElementById("countdown");
 var choicesEl = document.getElementById("choices");
 
 //questions[0].title = this is how you refer to the various questions and answers. Brings value and property titles in the object "questions"
@@ -33,13 +35,25 @@ var questions = [{
 
 function startQuiz() {
     //hide start screen 
-    // unhide question section 
+    startButtonEl.style.display = "none";
 
-    //start timer & display timer 
+    // unhide question section
+
     // a function to serve the questions 
     getQuestion()
     console.log("hello")
 
+}
+
+function countdownTimer() {
+    var time = setInterval(function() {
+        if (timeRemaining > 1){
+            timeEl.textContent = timeRemaining;
+            timeRemaining--;
+        } else {
+            clearInterval(time);
+        }
+    } ,1000);
 }
 
 function getQuestion() {
@@ -71,14 +85,16 @@ function questionClick(event) {
     if (buttonEl.value !== questions[currentQuestionIndex].answer)
     {
         //subtract time 
-        time--;
+        console.log(timeRemaining - 15);
 
         // move to next quesiton 
         currentQuestionIndex++
     }
 }
 
-startButtonEl.addEventListener('click', startQuiz)
+startButtonEl.addEventListener('click', startQuiz);
+startButtonEl.addEventListener('click', countdownTimer);
+console.log(timeRemaining);
 // startButtonEl.onClick = startQuiz
 
 

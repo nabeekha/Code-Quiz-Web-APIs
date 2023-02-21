@@ -5,6 +5,9 @@ var currentQuestionIndex = 0;
 var timeRemaining = 100;
 var timeEl = document.getElementById("countdown");
 var choicesEl = document.getElementById("choices");
+//var score = document.getElementById("playerScore")
+var score = 0;
+var questionGameCount = 1;
 
 //questions[0].title = this is how you refer to the various questions and answers. Brings value and property titles in the object "questions"
 var questions = [{
@@ -47,7 +50,7 @@ function startQuiz() {
 
 function countdownTimer() {
     var time = setInterval(function() {
-        if (timeRemaining > 1){
+        if (timeRemaining > -1){
             timeEl.textContent = timeRemaining;
             timeRemaining--;
         } else {
@@ -76,25 +79,46 @@ function getQuestion() {
         // display on the page
         choicesEl.appendChild(choiceButton)
     }
-
-}
-
-function questionClick(event) {
-    console.log(event)
-    var buttonEl = event.target
-    if (buttonEl.value !== questions[currentQuestionIndex].answer)
-    {
-        //subtract time 
-        console.log(timeRemaining - 15);
-
-        // move to next quesiton 
-        currentQuestionIndex++
-    }
 }
 
 startButtonEl.addEventListener('click', startQuiz);
 startButtonEl.addEventListener('click', countdownTimer);
+
+//function to keep score as person clicks through questions
+choicesEl.addEventListener('click', function(event){
+    if (questionGameCount === 5) {
+        answers.textContent = "Game over, you reached the end of the quiz!"
+        score.textContent = score;
+    } else if (event.target.textContent !== questions[currentQuestionIndex - 1].answer[0]) {
+        answer.textContent = "wrong answer";
+        timeRemaining -= 10;
+    } else {
+        answer.textContent = "right answer";
+        score++;
+        currentQuestionIndex++
+    }
+})
+
+// function questionClick(event) {
+//     console.log(event)
+//     var buttonEl = event.target
+//     if (buttonEl.value !== questions[currentQuestionIndex].answer)
+//     {
+//         //subtract time 
+//         console.log(timeRemaining - 15);
+//         timeEl.textContent = (timeRemaining - 15);
+
+//         //add to score
+//         score.textContent = 0;
+
+//         // move to next quesiton 
+//         currentQuestionIndex++
+//     }
+// }
+
+
 console.log(timeRemaining);
+console.log(score);
 // startButtonEl.onClick = startQuiz
 
 

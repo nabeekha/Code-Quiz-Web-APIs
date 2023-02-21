@@ -2,6 +2,7 @@
     --font1: 'Arial';
 }
 
+/* adds styling to the header course */
 .header {
     font-family: var(--font1);
     display: flex;
@@ -18,6 +19,7 @@
     font-size: 20px;
 }
 
+/* add stylistic elements to start quiz */
 .start-quiz-button {
     font-family: var(--font1);
     display: flex;
@@ -51,7 +53,7 @@ p, button{
     font-size: 20px;
 }
 
-
+/* media queries to change the background color at various sizes */
 @media screen and (max-width: 768px) {
     header {
         background-color: #c8c8c8;

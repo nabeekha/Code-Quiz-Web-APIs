@@ -15,7 +15,7 @@
 
 <body>
     <p class="main-subtitle"> Try to answer the following code-related questions within the time limit.
-        Keep in mind that incorrect answers will penalize your score/time by 10 seconds! </p>
+        Keep in mind that incorrect answers will penalize your score/time by 10 seconds! Once the timer hits 0, the game is over! </p>
     <button class="start-quiz-button" id="start-quiz-button">Start Quiz</button>
 
     <p class="countdownDisplay">Time Remaining: <div id="countdown" class="timeDisplay">100</div></p>
@@ -30,7 +30,24 @@
     <div id="timer">
     </div>
 
-    <div id="playerScore"></div>
+<!--container for results and scores-->
+<section i="responses">
+</section>
+
+<div id="gameOver">
+    <div>Game Over</div>
+    Your Score: <var id="playerScore"> </var> </div> </br>
+
+    Player Initials: <input type="text" value="Initials" id="Initials">
+
+    <input type="button" value="submit" id="initialSubmission" onclick="scoreSubmit()">
+
+</div>
+
+<div id="scorePage" style="display: none">
+    <div id="highScore">Here are the high scores:</div>
+    <input type="button" value="Return Home" id
+</div>
 
 
 <script src="./script.js">  </script>

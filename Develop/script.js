@@ -8,6 +8,13 @@ var time = 100;
 var timeEl = document.getElementById("countdown");
 var choicesEl = document.getElementById("choices");
 
+// declaring answer choices
+var answerChoiceA = document.getElementById("answerA");
+    var answerChoiceB = document.getElementById("answerB");
+    var answerChoiceC = document.getElementById("answerC");
+    var answerChoiceD = document.getElementById("answerD");
+    var correctAnswer = document.getElementById("correctAnswer");  
+
 //var score = document.getElementById("playerScore")
 var score = 0;
 var questionGameCount = 1;
@@ -52,15 +59,15 @@ function startQuiz() {
 
 }
 
+var countdownInterval = setInterval(countdownTimer, 1000)
+
 function countdownTimer() {
-    var time = setInterval(function() {
-        if (timeRemaining > -1){
-            timeEl.textContent = timeRemaining;
-            timeRemaining--;
-        } else {
-            clearInterval(time);
-        }
-    } ,1000);
+   if (timeStart)
+   time--;
+   if (time<= 0) {
+    endQuiz()
+   }
+   document.getElementById
 }
 
 function getQuestion() {

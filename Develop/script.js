@@ -2,12 +2,16 @@ var startButtonEl = document.querySelector("#start-quiz-button");
 var count = 0;
 var currentQuestionIndex = 0;
 //var time = questions.length * 15;
-var timeRemaining = 100;
+var timeRemaining = true;
+var timeStart = false;
+var time = 100;
 var timeEl = document.getElementById("countdown");
 var choicesEl = document.getElementById("choices");
+
 //var score = document.getElementById("playerScore")
 var score = 0;
 var questionGameCount = 1;
+var highScore = []
 
 //questions[0].title = this is how you refer to the various questions and answers. Brings value and property titles in the object "questions"
 var questions = [{
